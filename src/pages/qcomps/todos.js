@@ -14,8 +14,9 @@ export default function TodoList() {
     <div style={person.theme}>
       <h1>Person Name's Todos</h1>
       <img className="avatar"
-      src="baseURL + imageID + imageSize + .jpg"
-      alt="Person's Name"
+      //This is how it should work but it's not loading for me for some reason :)
+      src={`${baseUrl}${person.imageID}${person.imageSize}.jpg`}
+      alt={person.name}
       />
     </div>
   );

@@ -1,3 +1,4 @@
+//{person, size=100} is a specific type of object with a person object and a default size parameter of 100.
 function Avatar({person, size=100}) {
   return (
     <img
@@ -9,6 +10,17 @@ function Avatar({person, size=100}) {
     />
   );
 }
+
+export {Avatar}
+
+//We have a bunch of avatar objects:
+/*
+Syntax is 
+<Component_name 
+  prop1 = {js value}
+  prop2 = {js value}
+  ... />
+*/
 
 export default function Profile() {
   return (

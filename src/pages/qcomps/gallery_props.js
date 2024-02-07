@@ -1,3 +1,30 @@
+
+//this didn't get finished because it'll take a while but you get the gist.
+//pass in a list of params and make elements accordingly.
+function Scientist({name, img_id, width=70, height=70, profession, awards, discovered}){
+  return(
+    <section className="profile">
+
+      <h2>{name}</h2>
+
+      <img 
+        className="avatar"
+        src={`https://i.imgur.com${img_id}s.jpg`}
+        alt={name}
+        width={width}
+        height={height}/>
+
+      <ul>
+        <li>
+          <b></b>
+        </li>
+      </ul>
+        
+    </section>
+
+  );
+}
+
 export default function Gallery() {
   return (
     <div>
