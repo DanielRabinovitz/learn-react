@@ -2,11 +2,20 @@ import { useState } from 'react';
 import { sculptureList } from '../../data/data.js';
 
 export default function Gallery() {
+
+  //For a hook, we define an array that gives us a getter and setter method.
+  //useState is the function for setting a hook, creates a state controller
   const [index, setIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
 
+  //setIndex and index are used again over here.
   function handleNextClick() {
-    setIndex(index + 1);
+    if(index === sculptureList.length-1){
+      setIndex(0);
+    } else{
+      setIndex(index + 1);
+    }
+     //using a hook tells React to rerender the component
   }
 
   function handleMoreClick() {

@@ -13,10 +13,29 @@ export const recipes = [{
 }];
 
 export default function RecipeList() {
+  // Make a header and a div to contain multiple lists
+  // Then do a map on each recipe to make a list out of the ingredients using a map function
+
   return (
     <div>
+
       <h1>Recipes</h1>
-      {}
+
+      {recipes.map((recipe) => (
+
+        <div key={recipe.id}>
+
+          <h2>{recipe.name}</h2> {/* Use h2 for recipe names to maintain semantic hierarchy */}
+          <ul>
+            {/*use spread syntax to unpack the set*/}
+            {[...recipe.ingredients].map((ingredient, index) => (
+              <li key={index}>{ingredient}</li> // Convert Set to Array for mapping and use index as key
+            ))}
+          </ul>
+
+        </div>
+
+      ))}
     </div>
   );
 }

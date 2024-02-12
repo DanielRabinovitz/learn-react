@@ -6,11 +6,13 @@ export default function PersonData() {
     const [age, setAge] = useState(0);
     const [person, setPerson] = useState({fullName: '', age: 0})
 
+    //this is a hook for the person object
     function handleClick() {
         let name = fName + ' ' + lName;
         setPerson({fullName: name, age: age});
     }
 
+    /* This is a form to pass stuff into the person setter*/
     return(
        <>
             <textarea value={fName} onChange={e => setFName(e.target.value)} />
