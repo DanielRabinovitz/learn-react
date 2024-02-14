@@ -5,10 +5,11 @@ export default function RequestTracker() {
   const [completed, setCompleted] = useState(0);
 
   async function handleClick() {
-    setPending(pending + 1);
+    setPending(pending => pending+1);
     await delay(3000);
-    setPending(pending - 1);
-    setCompleted(completed + 1);
+    //here we que up all the changes pending and completed during the pause
+    setPending(pending => pending - 1);
+    setCompleted(completed => completed + 1);
   }
 
   return (

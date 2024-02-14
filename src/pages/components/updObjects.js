@@ -11,6 +11,8 @@ export default function Form() {
                               });
 
   function handleCityChange(e) {
+    //We use spread syntax to say "look at all this stuff we're copying"
+    //and then specify the parts we want to chage afterwards.
     const nextArtwork = { ...person.artwork, city: e.target.value };
     const nextPerson = { ...person, artwork: nextArtwork };
     setPerson(nextPerson);
