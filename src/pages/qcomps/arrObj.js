@@ -10,7 +10,9 @@ const initialList = [
 export default function BucketList() {
   const [myList, setMyList] = useState(initialList);
   const [yourList, setYourList] = useState(
-    initialList
+    //just make a deep copy to differentiate the two and it fixes the bug
+    //You could also make a 2nd var (e.g. yourInitialList) and pass it in here
+    JSON.parse(JSON.stringify(initialList))
   );
 
   function handleToggleMyList(artworkId, nextSeen) {
